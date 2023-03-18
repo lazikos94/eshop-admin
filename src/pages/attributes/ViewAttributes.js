@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ViewOptions = () => {
+const ViewAttributes = () => {
 
     const [options,setOptions] = useState();
 
@@ -15,4 +15,4 @@ const ViewOptions = () => {
      );
 }
  
-export default ViewOptions;
+export default ViewAttributes;
