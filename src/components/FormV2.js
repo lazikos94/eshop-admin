@@ -9,6 +9,7 @@ import ElmFile from "../elemenents/ElmFile";
 import ElmReference from "../elemenents/ElmReference";
 import ElmFileArr from "../elemenents/ElmFIleArr";
 import ElmSelectInput from "../elemenents/ElmSelectInput";
+import ElmCheckBox from "../elemenents/ElmCheckBox";
 const FormV2 = (props) => {
     const [state, setState] = useState({
         name: {
@@ -19,6 +20,7 @@ const FormV2 = (props) => {
             en: '',
             gr: ''
         },
+        size_required:false
 
     });
     const [storage, setStorage] = useState({ reload: 0 });
@@ -200,6 +202,8 @@ const FormV2 = (props) => {
                         return (<ElmFileArr current={state} state={state} inpSchema={i} onChange={onImageChange} key={key} />)
                     } else if (i.type == 'select_input') {
                         return (<ElmSelectInput setState={setState} current={state} state={state} inpSchema={i} formFields={formFields} setFormFields={setFormFields} handleAddField={handleAddField} />)
+                    } else if (i.type == 'checkbox') {
+                        return (<ElmCheckBox setState={setState} current={state} state={state} inpSchema={i} />)
                     } else {
                         return (<div style={{ width: i.width }}>
                             <label className="label p-2">{i.label}</label>

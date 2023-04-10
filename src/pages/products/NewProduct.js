@@ -55,11 +55,11 @@ const NewProduct = () => {
         { type: 'number', placeholder: 'Price', name: 'price', label: 'Price (€)', width: '40%' },
         { type: 'number', placeholder: 'Discount', name: 'discount', label: 'Discount (%)', width: '40%' },
         { type: 'number', placeholder: 'Quantity', name: 'quantity', label: 'Quantity', width: '40%' },
-
         { type: 'reference', placeholder: 'Category', name: 'category', optionLabel: "name.en", onchange: cs_cat, onstoragereload: "", label: 'Category', width: '40%' },
         { type: 'reference', placeholder: 'Subcategory', name: 'subcategory', optionLabel: "name.en", onchange: "", onstoragereload: cs_scat, label: 'Subcategory', width: '40%' },
         { type: 'reference', placeholder: 'Brand', name: 'brand', label: 'Brand', optionLabel: "name", onchange: "", onstoragereload: cs_brand, width: '40%' },
         { type: 'reference', placeholder: 'Color', name: 'color', label: 'Color', optionLabel: "name.en", onchange: "", width: '40%' },
+        {type:'checkbox',placeholder:'Size Required?', name:'size_required',label:'Size Required?', width: '40%'},
         { type: 'select_input', placeholder: 'Size', name: 'size', label: 'Size', optionLabel: "name.en", onchange: "", width: '40%' },
     ]
 

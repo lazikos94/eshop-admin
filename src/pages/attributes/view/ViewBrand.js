@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Pagination from "../../../elemenents/Paginations";
 import AppConfig from "../../../app.json";
 const ViewBrand = () => {
@@ -65,7 +65,7 @@ const ViewBrand = () => {
                     {apiData?.map((i, key) => {
                         return <tr>
                             <th>{key}</th>
-                            <td onClick={() => navigateId(i._id)}><a>{i._id.toString()}</a></td>
+                            <td><Link to={`/edit-attributes/brand/${i._id}`} >{i._id.toString()}</Link></td>
                             <td>{i.name}</td>
 
                         </tr>

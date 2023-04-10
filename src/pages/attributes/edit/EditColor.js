@@ -57,7 +57,7 @@ const EditColor = () => {
             <FormV2 title={'Edit Color'} buttonname={'Update'} fields={formdata} apiData={apiData} apiPath={'/api/v1/db.do/color/update'} apiMethod={'PUT'} />
             <button class="button is-danger mt-5 mb-5 is-fullwidth" onClick={handleDeleteClick}>Delete</button>
             {isModalOpen && (
-                <Modal handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
+                <Modal title='Delete'  handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
             )}
         </> : <></>}
     </div>);

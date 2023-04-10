@@ -56,7 +56,7 @@ const EditSize = () => {
             <FormV2 title={'Edit Size'} buttonname={'Update'} fields={formdata} apiData={apiData} apiPath={'/api/v1/db.do/size/update'} apiMethod={'PUT'} />
             <button class="button is-danger mt-5 mb-5 is-fullwidth" onClick={handleDeleteClick}>Delete</button>
             {isModalOpen && (
-                <Modal handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
+                <Modal  title='Delete' handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
             )}
         </> : <></>}
     </div>);

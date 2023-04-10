@@ -57,7 +57,7 @@ const EditBrand = () => {
             <FormV2 title={'Edit Brand'} buttonname={'Update'} fields={formdata} apiData={apiBrandData} apiPath={'/api/v1/db.do/brand/update'} apiMethod={'PUT'} />
             <button class="button is-danger mt-5 mb-5 is-fullwidth" onClick={handleDeleteClick}>Delete</button>
             {isModalOpen && (
-                <Modal handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
+                <Modal title='Delete' handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
             )}
         </> : <></>}
     </div>);

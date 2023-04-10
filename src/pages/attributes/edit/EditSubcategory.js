@@ -58,7 +58,7 @@ const EditSubcategory = () => {
             <FormV2 title={'Edit Subcategory'} buttonname={'Update'} fields={data} apiData={apiSubcategoryData} apiPath={'/api/v1/db.do/subcategory/update'} apiMethod={'PUT'} />
             <button class="button is-danger mt-5 mb-5 is-fullwidth" onClick={handleDeleteClick}>Delete</button>
             {isModalOpen && (
-                <Modal handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
+                <Modal  title='Delete' handleModalCancel={handleModalCancel} handleModalConfirm={handleModalConfirm} />
             )}
         </> : <></>}
 

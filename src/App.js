@@ -25,6 +25,12 @@ import EditColor from "./pages/attributes/edit/EditColor";
 import EditProduct from "./pages/products/EditProduct";
 import ViewPages from "./pages/attributes/view/ViewPages";
 import EditPage from "./pages/attributes/edit/EditPage";
+import Orders from "./pages/orders/Orders";
+import Users from "./pages/users/Users";
+import Invoices from "./pages/invoices/Invoices";
+import EditOrder from "./pages/orders/EditOrder";
+import EditInvoice from "./pages/invoices/EditInvoice";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   const { globalState } = useMain();
@@ -32,59 +38,67 @@ function App() {
   return (
     <div className="container">
       <Header pages={[
-        { name: 'View Products', path: '/', type: 'start' },
-        { name: "New Product", path: '/new-product', type: 'start' },
+        { name: 'View Products', path: '/admin/products', type: 'start' },
+        { name: "New Product", path: '/admin/new-product', type: 'start' },
         {
           name: 'View Attributes', paths: [
-            { path: '/view-attributes/category', name: 'Category' },
-            { path: '/view-attributes/subcategory', name: 'Subcategory' },
-            { path: '/view-attributes/brand', name: 'Brand' },
-            { path: '/view-attributes/size', name: 'Size' },
-            { path: '/view-attributes/color', name: 'Color' },
+            { path: '/admin/view-attributes/category', name: 'Category' },
+            { path: '/admin/view-attributes/subcategory', name: 'Subcategory' },
+            { path: '/admin/view-attributes/brand', name: 'Brand' },
+            { path: '/admin/view-attributes/size', name: 'Size' },
+            { path: '/admin/view-attributes/color', name: 'Color' },
           ], type: 'dropdown'
         },
         {
           name: 'New Attributes', type: 'dropdown', paths: [
-            { path: '/new-attributes/category', name: 'Category' },
-            { path: '/new-attributes/subcategory', name: 'Subcategory' },
-            { path: '/new-attributes/brand', name: 'Brand' },
-            { path: '/new-attributes/size', name: 'Size' },
-            { path: '/new-attributes/color', name: 'Color' },
+            { path: '/admin/new-attributes/category', name: 'Category' },
+            { path: '/admin/new-attributes/subcategory', name: 'Subcategory' },
+            { path: '/admin/new-attributes/brand', name: 'Brand' },
+            { path: '/admin/new-attributes/size', name: 'Size' },
+            { path: '/admin/new-attributes/color', name: 'Color' },
           ]
         },
-
-        // { name: 'Edit Attributes', paths: [ 
-        //   { path:'/edit-attributes/category', name: 'Category' },
-        // ], type: 'dropdown' },
-
+        {
+          name: 'Order Data', type: 'dropdown', paths: [
+            { path: '/admin/orders', name: 'Orders' },
+            { path: '/admin/invoices', name: 'Invoices' },
+            { path: '/admin/customers', name: 'Customers' }
+          ]
+        },
         { name: 'Pages', path: '/view-pages', type: 'start' },
-        { name: 'Orders', path: '/orders', type: 'start' }]}
+      ]}
         auth={globalState} />
       <Routes>
-        <Route path={"/"} element={<Products />} />
-        <Route path={"product/:id"} element={<Product />} />
-        <Route path={"view-pages"} element={<ViewPages />} />
-        <Route path={"edit-product/:id"} element={<EditProduct />} />
-        <Route path={"new-product"} element={<NewProduct />} />
-        <Route path={"new-attributes/category"} element={<NewCategory />} />
-        <Route path={"new-attributes/subcategory"} element={<NewSubcategory />} />
-        <Route path={"new-attributes/brand"} element={<NewBrand />} />
-        <Route path={"new-attributes/size"} element={<NewSize />} />
-        <Route path={"new-attributes/color"} element={<NewColor />} />
-        <Route path={"view-attributes/category"} element={<ViewCategory />} />
-        <Route path={"view-attributes/subcategory"} element={<ViewSubcategory />} />
-        <Route path={"view-attributes/brand"} element={<ViewBrand />} />
-        <Route path={"view-attributes/size"} element={<ViewSize />} />
-        <Route path={"view-attributes/color"} element={<ViewColor />} />
-        <Route path={"edit-attributes/category/:id"} element={<EditCategory />} />
-        <Route path={"edit-attributes/subcategory/:id"} element={<EditSubcategory />} />
-        <Route path={"edit-attributes/brand/:id"} element={<EditBrand />} />
-        <Route path={"edit-attributes/size/:id"} element={<EditSize />} />
-        <Route path={"edit-attributes/color/:id"} element={<EditColor />} />
-        <Route path={"edit-page/:id"} element={<EditPage />} />
-        <Route path={"login"} element={<Login />} />
-        <Route path={"register"} element={<Register />} />
-        <Route path={"/*"} element={<div>Not Found</div>} />
+        <Route path={"/admin"} element={<Dashboard/>}/>
+        <Route path={"/admin/products"} element={<Products />} />
+        <Route path={"/admin/product/:id"} element={<Product />} />
+        <Route path={"/admin/view-pages"} element={<ViewPages />} />
+        <Route path={"/admin/edit-product/:id"} element={<EditProduct />} />
+        <Route path={"/admin/new-product"} element={<NewProduct />} />
+        <Route path={"/admin/new-attributes/category"} element={<NewCategory />} />
+        <Route path={"/admin/new-attributes/subcategory"} element={<NewSubcategory />} />
+        <Route path={"/admin/new-attributes/brand"} element={<NewBrand />} />
+        <Route path={"/admin/new-attributes/size"} element={<NewSize />} />
+        <Route path={"/admin/new-attributes/color"} element={<NewColor />} />
+        <Route path={"/admin/view-attributes/category"} element={<ViewCategory />} />
+        <Route path={"/admin/view-attributes/subcategory"} element={<ViewSubcategory />} />
+        <Route path={"/admin/view-attributes/brand"} element={<ViewBrand />} />
+        <Route path={"/admin/view-attributes/size"} element={<ViewSize />} />
+        <Route path={"/admin/view-attributes/color"} element={<ViewColor />} />
+        <Route path={"/admin/edit-attributes/category/:id"} element={<EditCategory />} />
+        <Route path={"/admin/edit-attributes/subcategory/:id"} element={<EditSubcategory />} />
+        <Route path={"/admin/edit-attributes/brand/:id"} element={<EditBrand />} />
+        <Route path={"/admin/edit-attributes/size/:id"} element={<EditSize />} />
+        <Route path={"/admin/edit-attributes/color/:id"} element={<EditColor />} />
+        <Route path={"/admin/edit-page/:id"} element={<EditPage />} />
+        <Route path={'/admin/orders'} element={<Orders />} />
+        <Route path={'/admin/edit-orders/:id'} element={<EditOrder/>} />
+        <Route path={'/admin/edit-invoices/:id'} element={<EditInvoice/>} />
+        <Route path={'/admin/invoices'} element={<Invoices />} />
+        <Route path={'/admin/customers'} element={<Users />} />
+        <Route path={"/admin/login"} element={<Login />} />
+        <Route path={"/admin/register"} element={<Register />} />
+        <Route path={"/admin/*"} element={<div>Not Found</div>} />
       </Routes>
     </div>
   );

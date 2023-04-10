@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Pagination from "../../../elemenents/Paginations";
 import AppConfig from "../../../app.json";
 const ViewPages = () => {
@@ -69,7 +69,7 @@ const ViewPages = () => {
                         return (
                             <tr key={key}>
                                 <th>{key}</th>
-                                <td onClick={() => navigateId(i._id)}><a>{i._id.toString()}</a></td>
+                                <td><Link to={`/edit-page/${i._id}`} >{i._id.toString()}</Link></td>
                                 <td>{i.name}</td>
                                 <td>{i.label.gr}</td>
                                 <td>{i.label.en}</td>
